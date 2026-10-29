@@ -54,8 +54,8 @@ node scripts/check.mjs posts/你的文章.md
 模板里的 `figures.json` 配合 [x-article-factory](https://github.com/avabb0916/x-article-factory) 使用：
 
 ```bash
-npx xaf figures figures.json --out images   # 若已发布到 npm
-# 或本地安装后：
+# 先克隆 x-article-factory 到同级目录：
+git clone https://github.com/avabb0916/x-article-factory.git ../x-article-factory
 node ../x-article-factory/bin/xaf.mjs figures figures.json --out images
 ```
 
