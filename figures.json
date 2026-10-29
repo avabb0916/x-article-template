@@ -1,0 +1,16 @@
+{
+  "figures": [
+    { "name": "cover", "type": "cover", "kicker": "栏目 · 环节", "title": "文章<em>主标题</em>", "sub": "一句话副标", "brand": "你的品牌" },
+    { "name": "steps", "type": "steps", "title": "三步流程", "brand": "你的品牌",
+      "steps": [
+        { "name": "1 第一步", "desc": "做什么", "verify": "怎么验证" },
+        { "name": "2 第二步", "desc": "做什么", "verify": "怎么验证" },
+        { "name": "3 第三步", "desc": "做什么", "verify": "怎么验证" }
+      ],
+      "note": "顺序不能换"
+    },
+    { "name": "checklist", "type": "checklist", "title": "发布前自检", "brand": "你的品牌",
+      "items": ["标题能独立看懂", "小标题 ≥5 个", "配图 5–9 张", "无表格和代码块", "结尾有一句提问"],
+      "note": "全过再发" }
+  ]
+}
