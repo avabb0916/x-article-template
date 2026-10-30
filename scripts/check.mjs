@@ -5,6 +5,7 @@
 import fs from 'fs';
 import path from 'path';
 
+const CN = ['一','二','三','四','五','六','七','八','九','十','十一','十二','十三','十四','十五','十六','十七','十八','十九','二十'];
 const BANNED = ['TODO', 'FIXME', '内部黑话'];
 const RISK = ['成人', '赌博', '博彩', '盗版', '翻墙', '代注册', '荐股'];
 const ABSOLUTE = ['全网第一', '100%有效', '永久有效', '保证赚钱'];
@@ -79,6 +80,14 @@ export function check(file) {
       }
     }
   }
+
+  // 二级标题编号：从「一」起、连续不跳号
+  const heads = [...doc.plain.matchAll(/^##\s+([零一二三四五六七八九十]+)?[、.．]?\s*(.+)$/gm)];
+  heads.forEach((m, idx) => {
+    const want = CN[idx] ?? String(idx + 1);
+    if (!m[1]) add('warn', 'no-heading-number', `第 ${idx + 1} 个二级标题没有编号`);
+    else if (m[1] !== want) add('warn', 'heading-number-order', `标题编号「${m[1]}」应为「${want}」`);
+  });
 
   if (doc.notXY > 3) add('warn', 'no-not-x-is-y', `「不是X，是Y」${doc.notXY} 次，建议 ≤3`);
   if (!/留言|评论|告诉我|你怎么/.test(doc.plain.slice(-320))) add('warn', 'cta-tail', '结尾没有提问');
