@@ -79,6 +79,7 @@ node ../x-md-publisher/bin/xpub.mjs posts/你的文章.md --cover images/cover.p
 | [content-factory](https://github.com/avabb0916/agent-skill-content-factory) | 完整流程技能（可装进任何 Agent） |
 | [x-article-factory](https://github.com/avabb0916/x-article-factory) | 17 条规则的检查器 + 5 类配图生成 |
 | [x-md-publisher](https://github.com/avabb0916/x-md-publisher) | Markdown → X 文章草稿 |
+| [md2substack](https://github.com/avabb0916/md2substack) | Markdown → Substack 草稿 |
 | [md2wechat](https://github.com/avabb0916/md2wechat) | Markdown → 公众号草稿 |
 
 ## 自定义
